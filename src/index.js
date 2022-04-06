@@ -28,6 +28,9 @@ app.get('/', (req, res) => {
 const dogroutes = require('./routes/dog-routes');
 app.use('/dogs', dogroutes);
 
+const userroutes = require('./routes/user-routes');
+app.use('/', userroutes);
+
 app.listen(3000, function () { console.log("entrou") });
 
 //Duvidas pra perguntar pro prof hiihihih. Precisa fazer um sistema de cadastro/login? pode usar banco? 
