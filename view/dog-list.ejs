@@ -8,7 +8,7 @@
         <table>
             <tr>
             <th>
-                Nome
+                ID
             </th>
             <th>
                 Raça
@@ -16,24 +16,26 @@
             <th>
                 Porte
             </th>
+            <th>
+                Descrição
+            </th>
     
             </tr>
+            <% dogs.forEach(dog => { %>
             <tr>
                 <td>
-                    Jorranes Beiçes
+                    <%=dog.id%>
                 </td>
                 <td>
-                    Vira lata
+                    <%=dog.raca %>
                 </td>
                 <td>
-                    16cm
+                    <%=dog.porte %>
                 </td>
-            
+                <td><%=dog.descricao %></td>
             </tr>
+            <%})%>
         </table>
     </div>
-
-
     </body>
-
 </html>

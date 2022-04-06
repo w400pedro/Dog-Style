@@ -1,12 +1,8 @@
-const { stringify } = require("nodemon/lib/utils");
-
-
-
-
+const dogs = require('../database/dogs-db');
 
 class dogFunction {
 async showDog(req, res){
-   return res.render('dog-list');
+   res.render('dog-list', { dogs: dogs });
 };
 
 async deleteDog(req, res){

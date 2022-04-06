@@ -1,0 +1,6 @@
+USAR NO LISTAGEM.EJS QUANDO LOGIN ADM TIVER LOGADO:
+
+<% if(user.status == 'adm'){%>
+    <form action"../dogs/delete<%=dog.id%>">
+        <td><input type="submit" value="excluir"></td>
+        </form> <% } %>
