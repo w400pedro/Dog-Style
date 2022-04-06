@@ -9,7 +9,7 @@ app.set('views', './view');
 app.get('/', (req, res) => {
     res.redirect('/dogs');
 });
-const teste = 1;
+
 const dogroutes = require('./routes/dog-routes');
 app.use('/dogs', dogroutes);
 app.listen(3000, function () { console.log("entrou") });
