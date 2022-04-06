@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('includes/head.ejs')%>
+
+    <body>
+        <h1>Explore e conheça as mais diversas raças de cachorros</h1>
+<div style="background-color: rgb(219, 215, 215); border: 2px gray dotted;">
+        <table>
+            <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Raça
+            </th>
+            <th>
+                Porte
+            </th>
+            <th>
+                Descrição
+            </th>
+    
+            </tr>
+            <% dogs.forEach(dog => { %>
+            <tr>
+                <td>
+                    <%=dog.id%>
+                </td>
+                <td>
+                    <%=dog.raca %>
+                </td>
+                <td>
+                    <%=dog.porte %>
+                </td>
+                <td><%=dog.descricao %></td>
+            </tr>
+            <%})%>
+        </table>
+    </div>
+    </body>
+</html>
