@@ -1,11 +1,26 @@
+const { stringify } = require("nodemon/lib/utils");
 
 
 
 
 
 class dogFunction {
-async exibeDog(req, res){
-    res.render('dog-list')
+async showDog(req, res){
+   return res.render('dog-list');
+};
+
+async deleteDog(req, res){
+const { id } = req.params;
+    res.send({id})
+};
+
+async updateDog(req, res){
+    const { id } = req.params;
+    res.send({id});
+}
+async showProfile(req,res){
+    const { userid } = req.params;
+    res.send({userid});
 }
 }
 
