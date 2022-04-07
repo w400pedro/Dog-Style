@@ -11,6 +11,16 @@ class userFunction {
         res.render('user-profile')
     }
 
+    async cadastrar(req, res) {
+        console.log('usercontrollers/cadastrar');
+
+        const user = req.body;
+        users.push(user);  // salvando?, fazer a data ser no formato certo, e fazer o id entrar k
+
+        console.log({ users });
+        //res.redirect('/');
+    }
+
     async login(req, res) {
     
         const { email, senha } = req.body;
