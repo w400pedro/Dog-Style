@@ -9,9 +9,10 @@ const funcaodog = new dogFunction;
 router.get('/', funcaodog.showDog);
 router.get('/details/:id', funcaodog.showDetails);
 router.get('/create', funcaodog.showCreateDog);
+router.get('/update/:id', funcaodog.showUpdateDog);
 router.get('/delete/:id', funcaodog.deleteDog);
-router.get('/update/:id', funcaodog.updateDog);
 
 router.post('/', funcaodog.createDog);
+router.post('/update/:id', funcaodog.updateDog);
 
 module.exports = router;

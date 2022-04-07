@@ -5,18 +5,18 @@
     <body>
         <%-include('includes/nav.ejs')%>
 <body>
-    <h3 style="color: rgb(248, 153, 169);">Atualize o </h3>
-    <form action="/dogs" method="POST">
-        <label for="nome" style="color: gray;"><h5>Atualize a Raça : </label><input required style="width: initial; font-size: larger;" name="raca"></h5>
-        <label for="porte" style="color: gray;"><h5>atualize o Porte : </label><input required style="width: initial; font-size: larger;" name="porte"></h5>
+    <h3 style="color: rgb(248, 153, 169);">Atualize o <%=dogs.raca%></h3>
+    <form action="/dogs/update/<%=dogs.id%>" method="POST">
+        <label for="nome" style="color: gray;"><h5>Atualize a Raça : </label><input style="width: initial; font-size: larger;" name="raca" value="<%=dogs.raca%>"></h5>
+        <label for="porte" style="color: gray;"><h5>atualize o Porte : </label><input style="width: initial; font-size: larger;" name="porte" value="<%=dogs.porte%>"></h5>
 
-        <label for="short_description" style="color: gray;"><h5>Atualize a Descrição Curta: </label><input required style="width: 800px; font-size: larger;" name="descricaocurta"></h5>
+        <label for="short_description" style="color: gray;"><h5>Atualize a Descrição Curta: </label><input style="width: 800px; font-size: larger;" name="descricaocurta" value="<%=dogs.descricaocurta%>"></h5>
         <br>
-        <label for="description" style="color: gray;"><h5 style="display:inline">Atualize a Descrição : </h5></label> <textarea style="font-size: x-large; width: initial; width: 800px; height: 120px;" name="descricao" required></textarea>
+        <label for="description" style="color: gray;"><h5 style="display:inline">Atualize a Descrição : </h5></label> <textarea style="font-size: x-large; width: initial; width: 800px; height: 120px;" name="descricao"><%=dogs.descricao%></textarea>
         <br>
         <br>
 
-        <input class="waves-effect waves-light btn" style="background-color: rgb(208, 109, 125);" type="submit" value="Cadastrar Raça">
+        <input class="waves-effect waves-light btn" style="background-color: rgb(208, 109, 125);" type="submit" value="Atualizar <%=dogs.raca%>">
     </form>
 
  

@@ -4,7 +4,11 @@
 
     <body>
         <%-include('includes/nav.ejs')%>
-        <h1 style="text-shadow: 5px 5px 7px #EE6E73;">Explore e conheça as mais diversas raças de cachorros</h1>  
+        <h1 style="text-shadow: 5px 5px 7px #EE6E73; margin-top: 20px;">Explore e conheça as mais diversas raças de cachorros</h1>  
+        
+        <form method="GET" style=" margin-left: 40%;"> <label for="search"><h5 style="display: inline; color: gray;">Filtro : </h5></label>
+        <input name="filter" style="width: auto;" type="text"> <input type="submit" value="&#128269;"></form>
+        <br>
         <table style="border: 2px #EE6E73 dotted; background-color: antiquewhite;">
             <tr>
 
@@ -32,6 +36,8 @@
                 <td>
                     <a href="/dogs/details/<%=dog.id%>">Detalhes</a>
                 </td>
+                <td><a href="/dogs/update/<%=dog.id%>">Update</a></td>
+                <td><a href="/dogs/delete/<%=dog.id%>" onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")'>Delete</a></td>
             </tr>
             <%})%>
         </table>
