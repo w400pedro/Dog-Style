@@ -11,21 +11,21 @@ class userFunction {
         res.render('user-profile')
     }
 
-    async login(req, res) {
-    
-        const { email, senha } = req.body;
-        const usuarioEcontrado = users.find(u => u.email == email);
+    //async login(req, res) {
+    //
+    //    const { email, senha } = req.body;
+    //    const usuarioEcontrado = users.find(u => u.email == email);
 
-        if (!usuarioEcontrado) return res.send('Usuario não encontrado');
+    //    if (!usuarioEcontrado) return res.send('Usuario não encontrado');
 
-        if (usuarioEcontrado.senha == senha) {
-            req.session.user = usuarioEcontrado;
-            return res.send('Logado com Sucesso');
-        } else {
-            return res.send('Senha Errada');
-        }
+    //    if (usuarioEcontrado.senha == senha) {
+     //       req.session.user = usuarioEcontrado;
+    //        return res.send('Logado com Sucesso');
+    //    } else {
+    //        return res.send('Senha Errada');
+    //    }
         
-    }
+    //}
 }
 
 module.exports = { userFunction }
