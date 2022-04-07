@@ -3,17 +3,16 @@
     <%-include('includes/head.ejs')%>
 <body>
     <%-include('includes/nav.ejs')%>
-     <!--CARA AQUI TU BOTA AS INFORMACOES DO USUARIO QUE TA LOGADO-->
     <table style="border: 1px solid black;">
     <tr>
-        <td>ID: </td> 
+        <td>Seu ID: <%=users.id%></td> 
         <th>
-        Pedro Henrique Pereira Gonzalez Padilha
+        <%=users.nome%>
         </th>
-        <td>19/05/1995</td>
-        <td>email</td>
-    </tr>
+        <td><%=users.email%></td>
+        <td><%=users.data_nascimento%></td>
+        <td>Raças favoritas : <%=users.racafavorita%></td>
+    </tr> 
     </table>
-    
 </body>
 </html>

@@ -12,7 +12,7 @@ class dogFunction {
         const { id } = req.params;
         const dogfiltrado = dog.filter(value => value.id == id);
         res.render('dog-details', { dogs: dogfiltrado[0] });
-    }
+    };
 
     async showCreateDog(req, res) {
         //COLOCAR AQUI QUE SÓ O ADM TEM AUTORIZAÇÃO

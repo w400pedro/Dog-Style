@@ -1,9 +1,12 @@
 const users = require('../database/user-db'); //Descomenta qnd criar o banco
 
+const { nanoid } = require('nanoid'); //USA ESSA MERDA IGUAL EU USEI NO DOG CONTROLLER
 class userFunction {
     async showProfile(req, res) {
         // cara aqui tu passa pela URL o usuario logado res.render('user-profile', {user.logado} algo assim, VE O VIDEO DE 4 MIN Q TE MANDEI LA, ELE VAI AJUDAR
-        res.render('user-profile')
+        console.log(req.session.user)
+        res.render('user-profile', { users: req.session.user })
+        console.log(req.session.user)
     }
 
     async userRegistration(req, res){
@@ -16,9 +19,11 @@ class userFunction {
 
         const user = req.body;
         users.push(user);  // salvando?, fazer a data ser no formato certo, e fazer o id entrar k
-
+        //racafavorito: ''
+         //id: nanoid(10)
         console.log({ users });
-        //res.redirect('/');
+        res.redirect('/login.html');
+
     }
 
     async login(req, res) {
@@ -30,7 +35,10 @@ class userFunction {
 
         if (usuarioEcontrado.senha == senha) {
            req.session.user = usuarioEcontrado;
-            return res.send('Logado com Sucesso');
+           console.log(req.session.user)
+           console.log('Logado com Sucesso')
+            return res.redirect('/');
+
         } else {
             return res.send('Senha Errada');
         }

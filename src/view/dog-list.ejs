@@ -4,14 +4,13 @@
 
     <body>
         <%-include('includes/nav.ejs')%>
-        <h1 style="text-shadow: 5px 5px 7px #EE6E73; margin-top: 20px;">Explore e conheça as mais diversas raças de cachorros</h1>  
+        <h3 style="text-shadow: 5px 5px 7px #EE6E73; margin-left: 95px; margin-top: 20px;">Explore e conheça as mais diversas raças de cachorros</h3>  
         
-        <form method="GET" style=" margin-left: 40%;"> <label for="search"><h5 style="display: inline; color: gray;">Filtro : </h5></label>
-        <input name="filter" style="width: auto;" type="text"> <input type="submit" value="&#128269;"></form>
+        <form method="GET" style=" margin-left: 35%;"> <label for="search"><h5 style="display: inline; color: rgb(228, 188, 188);">Filtro : </h5></label>
+        <input name="filter" style="width: auto;" type="text"> <input type="submit" class="waves-effect waves-light btn" style="background-color: rgb(224, 167, 167);" value="&#128269;"></form>
         <br>
-        <table style="border: 2px #EE6E73 dotted; background-color: antiquewhite;">
+        <table style="width: 92%; margin: 0 auto; border: 2px #EE6E73 dotted; background-color: antiquewhite;">
             <tr>
-
             <th>
                 Raça
             </th>
@@ -37,7 +36,8 @@
                     <a href="/dogs/details/<%=dog.id%>">Detalhes</a>
                 </td>
                 <td><a href="/dogs/update/<%=dog.id%>">Update</a></td>
-                <td><a href="/dogs/delete/<%=dog.id%>" onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")'>Delete</a></td>
+                <td><a href="/dogs/update/<%=dog.id%>">&#10056;</a></td>
+                <td><a href="/dogs/delete/<%=dog.id%>" onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")' >Delete</a></td> <!--EJS não reconhece o return, mas ele funciona do jeito correto-->
             </tr>
             <%})%>
         </table>
