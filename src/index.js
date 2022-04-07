@@ -32,6 +32,13 @@ app.use('/dogs', dogroutes);
 const userroutes = require('./routes/user-routes');
 app.use('/user', userroutes);
 
-app.listen(3000, function () { console.log("entrou") });
+app.use('*', (req, res) => {
+    return res.status(404).send(`
+        <h1>Sorry, not found!!!</h1>
+        <a href="/dogs">VOLTAR</a>
+    `);
+})
+
+app.listen(3000, function () { console.log("Servidor iniciado na porta 3000") });
 
 //Duvidas pra perguntar pro prof hiihihih. Precisa fazer um sistema de cadastro/login? pode usar banco? 

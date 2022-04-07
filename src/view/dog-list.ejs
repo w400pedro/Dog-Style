@@ -4,9 +4,8 @@
 
     <body>
         <%-include('includes/nav.ejs')%>
-        <h1>Explore e conheça as mais diversas raças de cachorros</h1>
-<div style="background-color: rgb(219, 215, 215); border: 2px gray dotted;">
-        <table>
+        <h1>Explore e conheça as mais diversas raças de cachorros</h1>  
+        <table style="border: 2px #EE6E73 dotted; background-color: antiquewhite;">
             <tr>
             <th>
                 ID
@@ -20,6 +19,7 @@
             <th>
                 Descrição
             </th>
+            <th>Saiba mais</th>
     
             </tr>
             <% dogs.forEach(dog => { %>
@@ -33,7 +33,10 @@
                 <td>
                     <%=dog.porte %>
                 </td>
-                <td><%=dog.descricao %></td>
+                <td><%=dog.descricaocurta %></td>
+                <td>
+                    <a href="/dogs/<%=dog.id%>">Detalhes</a>
+                </td>
             </tr>
             <%})%>
         </table>
