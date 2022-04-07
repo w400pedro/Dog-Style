@@ -6,6 +6,8 @@ const { userFunction } = require('../controllers/user-controllers');
 
 const funcaouser = new userFunction;
 
-    router2.get('/register', funcaouser.showRegister); //Aqui tu ta dizendo q qnd essa URL /register for acessada, a function do controller vai ser chamada e exibida (tudo que a função faz é renderizar a tela de cadastro k)
+router2.get('/', funcaouser.showProfile);
 
-    module.exports = router2;
+router2.get('/register', funcaouser.userRegistration);
+
+module.exports = router2;

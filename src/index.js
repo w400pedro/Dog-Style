@@ -1,4 +1,5 @@
-
+// a URL /dogs leva pro CRUD central de cachorros
+// a URL /user leva pro perfil do usuario logado
 const express = require('express');
 const app = express();
 
@@ -29,7 +30,7 @@ const dogroutes = require('./routes/dog-routes');
 app.use('/dogs', dogroutes);
 
 const userroutes = require('./routes/user-routes');
-app.use('/', userroutes);
+app.use('/user', userroutes);
 
 app.listen(3000, function () { console.log("entrou") });
 
