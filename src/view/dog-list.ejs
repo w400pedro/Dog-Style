@@ -4,12 +4,10 @@
 
     <body>
         <%-include('includes/nav.ejs')%>
-        <h1>Explore e conheça as mais diversas raças de cachorros</h1>  
+        <h1 style="text-shadow: 5px 5px 7px #EE6E73;">Explore e conheça as mais diversas raças de cachorros</h1>  
         <table style="border: 2px #EE6E73 dotted; background-color: antiquewhite;">
             <tr>
-            <th>
-                ID
-            </th>
+
             <th>
                 Raça
             </th>
@@ -25,9 +23,6 @@
             <% dogs.forEach(dog => { %>
             <tr>
                 <td>
-                    <%=dog.id%>
-                </td>
-                <td>
                     <%=dog.raca %>
                 </td>
                 <td>
@@ -35,7 +30,7 @@
                 </td>
                 <td><%=dog.descricaocurta %></td>
                 <td>
-                    <a href="/dogs/<%=dog.id%>">Detalhes</a>
+                    <a href="/dogs/details/<%=dog.id%>">Detalhes</a>
                 </td>
             </tr>
             <%})%>
