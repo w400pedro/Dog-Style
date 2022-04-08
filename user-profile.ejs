@@ -1,0 +1,96 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ bootstrap ---------->
+<%- include('includes/head') %>
+<%-include('includes/nav.ejs')%>
+<div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <% let foto =''; if(users.foto == ''){ foto = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Xdf9OyXn9BpWL30gb6cpyLnkiCCbSaH8wVB1007o9WpYBDgb6J1_afDQTdJuqwgE3xM&usqp=CAU' }else{ foto = users.foto} %>
+
+                            <img src="<%=foto%>" width="250px">
+    
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        <%=users.nome%>
+                                    </h5>
+                                    <br><br>
+                                    <br><br>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <% if(users.adm == true){ %>
+                                        <div class="row">
+                            
+                                            <div class="col-md-6">
+                                                <label>Seu Id</label>
+                                            </div>
+                                             <div class="col-md-6">
+                                                <p><%=users.id%></p>
+                                            </div>
+                                        </div>
+                                        <%}%>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nome</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=users.nome%></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=users.email%></p>
+                                            </div>
+                                        </div>
+                                        <%if(users.adm==false){%>
+                                            <%let raca = ''; if(users.racafavorita == ''){ raca = 'Nenhuma raça favorita'}else{ raca = users.racafavorita}%>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Raça favorita</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=raca%></p>
+                                            </div>
+                                        </div> 
+                                <%}%>
+                                        <% if(users.adm == true){ %>
+                                            <div class="row">
+                                
+                                                <div class="col-md-6">
+                                                    <label>Tipo de Conta</label>
+                                                </div>
+                                                 <div class="col-md-6">
+                                                    <p>Administrador</p>
+                                                </div>
+                                            </div>
+                                            <%}%>
+                            </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
