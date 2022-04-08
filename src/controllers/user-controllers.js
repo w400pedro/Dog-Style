@@ -8,7 +8,7 @@ class userFunction {
         const userLogado = req.session.user;
         if(userLogado){
 
-        res.render('user-profile', { users: req.session.user })
+        res.render('user-profile', { users: userLogado })
         }else{
             return res.send('Você não está logado com uma conta <br> <a href="/login.html">Login</a>')
         }
@@ -23,11 +23,13 @@ class userFunction {
        
 
         const user = req.body;
-        users.push(user);  // salvando?, fazer a data ser no formato certo, e fazer o id entrar k
-        //racafavorito: ''
-        //id: nanoid(10)
-        //adm: false (por padrao vem como falso, ai eu vou botar q só outros adms podem dar adm pra outro cara k)
-
+        users.push({
+        racafavorita: '',
+        id: nanoid(8),
+        adm: false,
+        data_nascimento: user.data_nascimento,
+        ...user
+        });
         res.redirect('/login.html');
 
     }
@@ -91,6 +93,26 @@ class userFunction {
         return res.send ('Você não está logado com uma conta <br> <a href="/login.html">Login</a>');
     }
 }
+
+async userLogout(req, res){
+    const userLogado = req.session.user;
+    if(userLogado){
+        req.session.user = ''
+        console.log('Deslogado com sucesso');
+        res.redirect('/')
+    }else{
+        return res.send("Você não pode dar logout sem estar logado antes! <br><a href='/dogs'>Voltar</a>")
+    }
+}
+
+    async allUser(req, res){
+        const userLogado = req.session.user;
+        if(userLogado && userLogado.adm == true){
+
+           res.render('admin-all-users', { users: userLogado })
+        }
+    }
+
 }
 
 module.exports = { userFunction }

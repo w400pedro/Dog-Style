@@ -13,7 +13,7 @@
         <table style="width: 92%; margin: 0 auto; border: 2px #EE6E73 dotted; background-color: antiquewhite;">
             <tr>
             <th>
-                Raça
+                Raça    
             </th>
             <th>
                 Porte
@@ -41,7 +41,7 @@
                 </td>
                <% if(users.adm == true){%>
                 <td><a href="/dogs/update/<%=dog.id%>">Update</a></td>
-                <td><a href="/dogs/delete/<%=dog.id%>" onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")' >Delete</<a></td> <!--EJS não reconhece o return, mas ele funciona do jeito correto-->
+                <td><a href="/dogs/delete/<%=dog.id%>" onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")' >Delete</<a></td> <!--EJS as vezes sublinha o "return" pois não reconhece ele, mas funciona do jeito correto-->
                 <%}%>    
                    <% if(users.racafavorita == dog.raca && users.adm == false){ %>
 

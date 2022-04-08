@@ -6,7 +6,7 @@ class dogFunction {
     async showDog(req, res) {
         const userLogado = req.session.user;
         if (userLogado) {
-            res.render('dog-list', { dogs: dog, users: req.session.user });
+            res.render('dog-list', { dogs: dog, users: userLogado });
         } else {
             res.redirect('/login.html')
         }
@@ -17,7 +17,7 @@ class dogFunction {
         if (userLogado) {
         const { id } = req.params;
         const dogfiltrado = dog.filter(value => value.id == id);
-        res.render('dog-details', { dogs: dogfiltrado[0] });
+        res.render('dog-details', { dogs: dogfiltrado[0], users: userLogado });
         }else{
         res.send('Você não está logado <br><a href="/login.html">Voltar</a>')
         }
@@ -26,7 +26,7 @@ class dogFunction {
     async showCreateDog(req, res) {
         const userLogado = req.session.user;
         if (userLogado && userLogado.adm == true) {
-            res.render('dog-create');
+            res.render('dog-create', { users: userLogado });
         }else{
             res.send('Você não tem acesso a essa página <br><a href="/dogs">Voltar</a>');
         }
@@ -51,7 +51,7 @@ class dogFunction {
             const user = req.session.user;
                 const { id } = req.params;
                 const dogfiltrado = dog.filter(value => value.id == id);
-                return res.render('dog-update', { dogs: dogfiltrado[0] })
+                return res.render('dog-update', { dogs: dogfiltrado[0], users: userLogado })
             } else {
                 return res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
             }
