@@ -8,5 +8,5 @@ Admin tem uma página unica aonde pode monitorar a lista de cachorros e suas inf
 2. ### Instale as dependências
             npm install
 3. ### Execute o script
-            npm run <script-name>
-  #### OBS: O script-name é "dev"
+            npm run dev
+
