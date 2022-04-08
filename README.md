@@ -9,4 +9,5 @@ Admin tem uma página unica aonde pode monitorar a lista de cachorros e suas inf
             npm install
 3. ### Execute o script
             npm run dev
-
+4. ### Entrar no servidor pelo navegador
+            http://localhost:3000/
