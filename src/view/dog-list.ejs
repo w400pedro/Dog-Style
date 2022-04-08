@@ -27,6 +27,7 @@
             <tr>
                 <td>
                     <%=dog.raca %>
+               
                 </td>
                 <td>
                     <%=dog.porte %>
@@ -35,9 +36,19 @@
                 <td>
                     <a href="/dogs/details/<%=dog.id%>">Detalhes</a>
                 </td>
+               <% if(users.adm == true){%>
                 <td><a href="/dogs/update/<%=dog.id%>">Update</a></td>
-                <td><a href="/dogs/update/<%=dog.id%>">&#10056;</a></td>
-                <td><a href="/dogs/delete/<%=dog.id%>" onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")' >Delete</a></td> <!--EJS não reconhece o return, mas ele funciona do jeito correto-->
+                <td><a href="/dogs/delete/<%=dog.id%>" onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")' >Delete</<a></td> <!--EJS não reconhece o return, mas ele funciona do jeito correto-->
+                <%}%>    
+                   <% if(users.racafavorita == dog.raca && users.adm == false){ %>
+
+                        <td><a href="/user/unfavorite/<%=dog.id%>"><h6>★</h6></a></td>
+
+                        <% }else if(users.racafavorita != dog.raca && users.adm ==false){ %>
+
+                <td><a href="/user/favorite/<%=dog.id%>"><h6>&#10025;</h6></a></td> 
+
+            <% }%>
             </tr>
             <%})%>
         </table>

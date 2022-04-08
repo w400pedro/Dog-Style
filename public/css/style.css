@@ -1,0 +1,22 @@
+
+h5{
+    display: inline;
+}
+#registerdata{
+    width: 250px;
+    font-size: larger
+}
+#registerimage{
+    width: 700px;
+    font-size: larger
+}
+#registersubtitle{
+    color: rgb(248, 153, 169);
+}
+.labelcolor{
+    color: gray;
+}
+.registerinput{
+    width: 500px !important;
+     font-size: larger !important;
+}

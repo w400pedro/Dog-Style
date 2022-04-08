@@ -10,8 +10,12 @@
         <%=users.nome%>
         </th>
         <td><%=users.email%></td>
+        <% let tipo =''; if(users.adm == true){tipo = 'Administrador' }else{tipo = 'Usuário'};%>
+        <td>Tipo de conta : <%=tipo%></td> <!--PAPI COLOCA ESSE IF NA TUA PAGINA Q TU VAI FZR COM O BOOTSTRAP AI-->
         <td><%=users.data_nascimento%></td>
-        <td>Raças favoritas : <%=users.racafavorita%></td>
+        <%if(users.adm==false){%>
+        <td>Raça favorita : <%=users.racafavorita%></td>
+        <%}%>
     </tr> 
     </table>
 </body>

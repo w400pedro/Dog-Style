@@ -5,36 +5,39 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dog Style</title>
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> !-->
-        <link rel="stylesheet" href="/public/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="icon" href="https://e7.pngegg.com/pngimages/90/669/png-clipart-do-not-catch-the-tongue-of-the-dog-pet-dog.png">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
 <body style="margin: 0 auto;">
     <h2>Cadastre-se já no Dog Style!</h2>
-    <h4 style="color: rgb(248, 153, 169);" >Seu site com tudo sobre os cãezinhos mais amados do Brasil!</h4>
+    <h4 id="registersubtitle">Seu site com tudo sobre os cãezinhos mais amados do Brasil!</h4>
     <form action="/user/cadastrar" method="post">
-        <label for="nome" style="color: gray;" >Nome</label>
-        <input style="width: initial; font-size: larger;" type="text" name="nome">
+        <label for="nome" class="labelcolor" ><h5>Nome :<h5></label>
+        <input type="text" required class="registerinput" name="nome">
 
         <br/><br/>
-        <label for="email" style="color: gray;" >Email</label>
-        <input style="width: initial; font-size: larger;" type="email" name="email">
+        <label for="email" class="labelcolor" ><h5>Email: </h5></label>
+        <input required class="registerinput" type="email" name="email">
         
         <br/><br/>
-        <label for="senha" style="color: gray;" >Senha</label>
-        <input style="width: initial; font-size: larger;" type="password" name="senha">
+        <label for="senha" class="labelcolor" ><h5>Senha : </h5></label>
+        <input class="registerinput" required type="password" name="senha">
 
         <br/><br/>
-        <label for="data_nascimento" style="color: gray;" >Nasceu em</label>
-        <input type="date" name="nascimento">
+        <label for="data_nascimento" class="labelcolor" ><h5>Nasceu em : </h5></label>
+        <input id="registerdata" required type="date" name="nascimento">
 
         <br/><br/>
+        <label for="foto" class="labelcolor"><h5>URL da foto de perfil (opcional) : </h5></label>
+        <input id="registerimage" name="foto" type="text">
+
+        <br>
         <input class="waves-effect waves-light btn" style="background-color: rgb(208, 109, 125);" type="submit" value="Registrar"/>
-        
     </form>
     <br>
     <hr>
-    <br>
+    
     <h4><a href="./login.html">Login</a></h4>
 </body>
 </html>
