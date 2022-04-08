@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include('includes/head.ejs')%>
+    <%- include('includes/head') %>
 
     <body>
         <%-include('includes/nav.ejs')%>
         <h3 style="text-shadow: 5px 5px 7px #EE6E73; margin-left: 95px; margin-top: 20px;">Explore e conheça as mais diversas raças de cachorros</h3>  
-        
+        <br>    
         <form method="GET" style=" margin-left: 35%;"> <label for="search"><h5 style="display: inline; color: rgb(228, 188, 188);">Filtro : </h5></label>
         <input name="filter" style="width: auto;" type="text"> <input type="submit" class="waves-effect waves-light btn" style="background-color: rgb(224, 167, 167);" value="&#128269;"></form>
         <br>
+        
         <table style="width: 92%; margin: 0 auto; border: 2px #EE6E73 dotted; background-color: antiquewhite;">
             <tr>
             <th>
@@ -21,7 +22,9 @@
                 Descrição
             </th>
             <th>Saiba mais</th>
-    
+            <% if(users.adm == true){ %>
+            <th><a href="dogs/create">Create &#9998;</a></th>
+            <%}%>
             </tr>
             <% dogs.forEach(dog => { %>
             <tr>

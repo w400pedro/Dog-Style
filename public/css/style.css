@@ -1,22 +1,87 @@
-
-h5{
-    display: inline;
+/*GLOBAL*/
+h5 {
+    display: inline !important;
 }
-#registerdata{
+
+label {
+    color: gray;
+}
+
+/*register.html*/
+#registerdata {
     width: 250px;
     font-size: larger
 }
-#registerimage{
+
+#registerimage {
     width: 700px;
     font-size: larger
 }
-#registersubtitle{
+
+#registersubtitle {
     color: rgb(248, 153, 169);
 }
-.labelcolor{
-    color: gray;
-}
-.registerinput{
+
+.registerinput {
     width: 500px !important;
-     font-size: larger !important;
+    font-size: larger !important;
+}
+
+#registersubmit {
+    background-color: rgb(208, 109, 125);
+}
+
+/*dog-create.ejs*/
+#createh3 {
+    color: rgb(248, 153, 169);
+}
+
+.createinput {
+    width: initial !important;
+    font-size: larger !important;
+    ;
+}
+
+.createinput2 {
+    width: 800px !important;
+    font-size: larger !important;
+}
+
+#createinput3 {
+    font-size: x-large;
+    width: 800px;
+    height: 120px;
+}
+
+#createsubmit {
+    background-color: rgb(208, 109, 125);
+}
+
+/*dog-update.ejs*/
+#updateh3 {
+    color: rgb(248, 153, 169);
+}
+
+#updatesubmit {
+    background-color: rgb(208, 109, 125);
+}
+
+.updateinput {
+    width: initial !important;
+    font-size: larger !important;
+}
+#updateinput2{
+width: 800px; 
+font-size: larger;
+}
+#updatetextarea{
+font-size: x-large; 
+width: 800px; 
+height: 120px;
+}
+#updateinputimg{
+width: 800px; font-size: larger;
+}
+#updateimg{
+    margin-left: 100px;
 }

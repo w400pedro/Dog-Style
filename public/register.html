@@ -13,27 +13,27 @@
     <h2>Cadastre-se já no Dog Style!</h2>
     <h4 id="registersubtitle">Seu site com tudo sobre os cãezinhos mais amados do Brasil!</h4>
     <form action="/user/cadastrar" method="post">
-        <label for="nome" class="labelcolor" ><h5>Nome :<h5></label>
+        <label for="nome" ><h5>Nome :<h5></label>
         <input type="text" required class="registerinput" name="nome">
 
         <br/><br/>
-        <label for="email" class="labelcolor" ><h5>Email: </h5></label>
+        <label for="email" ><h5>Email: </h5></label>
         <input required class="registerinput" type="email" name="email">
         
         <br/><br/>
-        <label for="senha" class="labelcolor" ><h5>Senha : </h5></label>
+        <label for="senha" ><h5>Senha : </h5></label>
         <input class="registerinput" required type="password" name="senha">
 
         <br/><br/>
-        <label for="data_nascimento" class="labelcolor" ><h5>Nasceu em : </h5></label>
+        <label for="data_nascimento" ><h5>Nasceu em : </h5></label>
         <input id="registerdata" required type="date" name="nascimento">
 
         <br/><br/>
-        <label for="foto" class="labelcolor"><h5>URL da foto de perfil (opcional) : </h5></label>
+        <label for="foto"><h5>URL da foto de perfil (opcional) : </h5></label>
         <input id="registerimage" name="foto" type="text">
 
         <br>
-        <input class="waves-effect waves-light btn" style="background-color: rgb(208, 109, 125);" type="submit" value="Registrar"/>
+        <input class="waves-effect waves-light btn" id="registersubmit" type="submit" value="Registrar"/>
     </form>
     <br>
     <hr>

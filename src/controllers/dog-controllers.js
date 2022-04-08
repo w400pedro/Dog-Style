@@ -68,6 +68,7 @@ class dogFunction {
                     dogs[c].porte = req.body.porte;
                     dogs[c].descricaocurta = req.body.descricaocurta;
                     dogs[c].descricao = req.body.descricao;
+                    dogs[c].foto = req.body.foto;
                     console.log('Alterado com sucesso')
                     return res.redirect('/dogs');
                 }

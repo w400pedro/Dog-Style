@@ -74,6 +74,8 @@ class userFunction {
         }
     }
 
+    //FALTA FAZER UNFAVORITE(EU FAÇO ISSO)
+
 }
 
 module.exports = { userFunction }

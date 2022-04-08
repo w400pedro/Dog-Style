@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('includes/head.ejs')%>
+    <%- include('includes/head') %>
 <body>
     <%-include('includes/nav.ejs')%>
     <table style="border: 1px solid black;">
@@ -16,6 +16,8 @@
         <%if(users.adm==false){%>
         <td>Raça favorita : <%=users.racafavorita%></td>
         <%}%>
+        <% let foto =''; if(users.foto == ''){ foto = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Xdf9OyXn9BpWL30gb6cpyLnkiCCbSaH8wVB1007o9WpYBDgb6J1_afDQTdJuqwgE3xM&usqp=CAU' }else{ foto = users.foto} %>
+        <img src="<%=foto%>" width="250px">
     </tr> 
     </table>
 </body>

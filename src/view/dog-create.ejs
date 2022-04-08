@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include('includes/head.ejs')%>
+    <%- include('includes/head') %>
 
     <body>
         <%-include('includes/nav.ejs')%>
 <body>
-    <h3 style="color: rgb(248, 153, 169);">Cadastre uma raça</h3>
+    MOVER PARA O PUBLIC
+    <h3 id="createh3">Cadastre uma raça</h3>
     <form action="/dogs" method="POST">
-        <label for="nome" style="color: gray;"><h5>Digite a Raça : </label><input required style="width: initial; font-size: larger;" name="raca"></h5>
-        <label for="porte" style="color: gray;"><h5>Digite o Porte : </label><input required style="width: initial; font-size: larger;" name="porte"></h5>
-
-        <label for="short_description" style="color: gray;"><h5>Digite a Descrição Curta: </label><input required style="width: 800px; font-size: larger;" name="descricaocurta"></h5>
+        <label for="nome" class="createlabel"><h5>Digite a Raça : </h5></label><input required class="createinput" name="raca">
         <br>
-        <label for="description" style="color: gray;"><h5 style="display:inline">Digite a Descrição : </h5></label> <textarea style="font-size: x-large; width: initial; width: 800px; height: 120px;" name="descricao" required></textarea>
-        <br>
+        <label for="porte" class="createlabel" ><h5>Digite o Porte : </h5></label><input required class="createinput" required  name="porte">
         <br>
 
-        <input class="waves-effect waves-light btn" style="background-color: rgb(208, 109, 125);" type="submit" value="Cadastrar Raça">
+        <label for="short_description" class="createlabel" ><h5>Digite a Descrição Curta: </h5></label><input required class="createinput2" required name="descricaocurta">
+        <br>
+        <br>
+        <label for="description" class="createlabel"><h5>Digite a Descrição : </h5></label> <textarea id="createinput3" name="descricao" required></textarea>
+        <br>
+        <br>
+        <label for="image" class="createlabel"><h5>URL da foto : </h5></label><input required class="createinput2" name="foto">
+        <br>
+        <br>
+
+        <input class="waves-effect waves-light btn" id="createsubmit" type="submit" value="Cadastrar Raça">
     </form>
 
  
