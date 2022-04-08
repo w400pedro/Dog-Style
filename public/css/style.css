@@ -85,3 +85,16 @@ width: 800px; font-size: larger;
 #updateimg{
     margin-left: 100px;
 }
+/*dog-details.ejs*/
+.dogdetailh{
+    color: rgba(128, 122, 123, 0.767);
+}
+#dogdetailh2{
+    color: rgb(248, 153, 169);
+}
+#dogimage{
+    margin-left: 65%; margin-top: 65px; position: absolute;
+}
+#detailsdiv{
+    width: 800px;
+}

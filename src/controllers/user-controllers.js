@@ -7,8 +7,7 @@ class userFunction {
     async showProfile(req, res) {
         const userLogado = req.session.user;
         if(userLogado){
-        console.log(users)
-        console.log( req.session.user)
+
         res.render('user-profile', { users: req.session.user })
         }else{
             return res.send('Você não está logado com uma conta <br> <a href="/login.html">Login</a>')
@@ -21,14 +20,14 @@ class userFunction {
     }
 
     async cadastrar(req, res) {
-        console.log('usercontrollers/cadastrar');
+       
 
         const user = req.body;
         users.push(user);  // salvando?, fazer a data ser no formato certo, e fazer o id entrar k
         //racafavorito: ''
         //id: nanoid(10)
         //adm: false (por padrao vem como falso, ai eu vou botar q só outros adms podem dar adm pra outro cara k)
-        console.log({ users });
+
         res.redirect('/login.html');
 
     }
@@ -42,7 +41,6 @@ class userFunction {
 
         if (usuarioEcontrado.senha == senha) {
             req.session.user = usuarioEcontrado;
-            console.log(req.session.user)
             console.log('Logado com Sucesso')
             return res.redirect('/');
 
@@ -55,7 +53,6 @@ class userFunction {
     async userFavorite(req, res) {
         const userLogado = req.session.user;
         if (userLogado) {
-        const userLogado = req.session.user;
         const { id } = req.params;
         const littledog = dogs.find(item => item.id == id);
         let c = 0;
@@ -74,8 +71,26 @@ class userFunction {
         }
     }
 
-    //FALTA FAZER UNFAVORITE(EU FAÇO ISSO)
-
+    async userUnfavorite(req, res) {
+        const userLogado = req.session.user;
+        if(userLogado){
+        const { id } = req.params;
+        const littledog = dogs.find(item => item.id == id);
+        let c = 0
+        while(c<users.length){
+            if(userLogado.racafavorita == littledog.raca && userLogado.id == users[c].id){
+                console.log(userLogado.racafavorita)
+                users[c].racafavorita = ''
+                req.session.user = users[c];
+                console.log('Desfavoritado');
+            }
+            c++
+        }
+        res.redirect('/')
+    }else{
+        return res.send ('Você não está logado com uma conta <br> <a href="/login.html">Login</a>');
+    }
+}
 }
 
 module.exports = { userFunction }

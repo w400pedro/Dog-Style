@@ -5,16 +5,21 @@
     <%-include('includes/nav.ejs')%>
     <table style="border: 1px solid black;">
     <tr>
+        <% if(users.adm == true){ %>
         <td>Seu ID: <%=users.id%></td> 
+        <%}%>
         <th>
         <%=users.nome%>
         </th>
         <td><%=users.email%></td>
-        <% let tipo =''; if(users.adm == true){tipo = 'Administrador' }else{tipo = 'Usuário'};%>
+        <% let tipo =''; if(users.adm == true){tipo = 'Administrador' }else{tipo = 'Usuário'}; %>
         <td>Tipo de conta : <%=tipo%></td> <!--PAPI COLOCA ESSE IF NA TUA PAGINA Q TU VAI FZR COM O BOOTSTRAP AI-->
-        <td><%=users.data_nascimento%></td>
+        <td>Data Nascimento : <%=users.data_nascimento%></td>
         <%if(users.adm==false){%>
-        <td>Raça favorita : <%=users.racafavorita%></td>
+           <%let raca = ''; if(users.racafavorita == ''){ raca = 'Nenhuma raça favorita'}else{ raca = users.racafavorita}%>
+            
+           
+        <td>Raça favorita : <%=raca%></td>
         <%}%>
         <% let foto =''; if(users.foto == ''){ foto = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Xdf9OyXn9BpWL30gb6cpyLnkiCCbSaH8wVB1007o9WpYBDgb6J1_afDQTdJuqwgE3xM&usqp=CAU' }else{ foto = users.foto} %>
         <img src="<%=foto%>" width="250px">

@@ -3,11 +3,11 @@
     <%- include('includes/head') %>
     <body>
         <%-include('includes/nav.ejs')%>
-        <div id="dogimage" style="margin-left: 65%; margin-top: 65px; position: absolute;"><img src="<%=dogs.foto%>" width="450"></div>
-        <h2 id="dogdetailh2" style="color: rgb(248, 153, 169);">Mais sobre o fofo <%= dogs.raca %></h2>
-    <h3 class="dogdetailh"  style="color: rgba(128, 122, 123, 0.767)">Porte: <%= dogs.porte %></h3>
-    <div id="div" style="width: 900px;">
-    <h4 class="dogdetailh" style="color: rgba(128, 122, 123, 0.767)">Descrição Detalhada: <%= dogs.descricao %></h4>
+        <div id="dogimage"><img src="<%=dogs.foto%>" alt="foto do <%=dogs.raca%>" width="400"></div>
+        <h2 id="dogdetailh2">Mais sobre o fofo <%= dogs.raca %></h2>
+    <h3 class="dogdetailh" >Porte: <%= dogs.porte %></h3>
+    <div id="detailsdiv">
+    <h4 class="dogdetailh" >Descrição Detalhada: <%= dogs.descricao %></h4>
 </div>    
     <br>
     <h3><a href="/dogs">Voltar</a></h3>
