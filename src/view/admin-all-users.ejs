@@ -4,7 +4,7 @@
 
     <body>
         <%-include('includes/nav.ejs')%>
-            <% if(adm.adm==true){ %>
+            <% if(users.adm==true){ %>
                 <h3 id="main-text">Todos usuários cadastrados</h3>
                 <br>
 
@@ -23,40 +23,48 @@
                             Email
                         </th>
                         <th class="padd">Nascimento</th>
+                        <th class="padd">Raça Favorita</th>
                         <th class="padd">
                             Ações
                         </th>
                     </tr>
 
-                    <% users.forEach(users=> { %>
-                        <%if(adm.id!=users.id){%>
+                    <% user.forEach(users2=> { %>
+                        <%if(users.id!=users2.id){%>
                         <tr>
                             <td class="padd">
 
-                                <% let foto='' ; if(users.foto=='' ){
+                                <% let foto='' ; if(users2.foto=='' ){
                                     foto='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Xdf9OyXn9BpWL30gb6cpyLnkiCCbSaH8wVB1007o9WpYBDgb6J1_afDQTdJuqwgE3xM&usqp=CAU'
-                                    }else{ foto=users.foto} %>
+                                    }else{ foto=users2.foto} %>
 
                                     <img alt="Foto de Perfil" src="<%=foto%>" width="60px">
                             </td>
                             <td class="padd">
 
-                                <%=users.id %>
+                                <%=users2.id %>
                             </td>
                             <td class="padd">
-                                <%=users.nome%>
+                                <%=users2.nome%>
                             </td>
                             <td class="padd">
-                                <%=users.email%>
+                                <%=users2.email%>
                             </td>
                             <td class="padd">
-                                <%=users.data_nascimento%>
+                                <%=users2.data_nascimento%>
                             </td>
                             <td class="padd">
-                                <% if(users.adm == true){ %>
-                                    <a href="/users/revogar/<%=users.id%>">Revogar Adm</a>
-                                    <%}else if(users.adm == false){%>
-                                        <a href="/users/conceder/<%=users.id%>">Conceder Adm</a>
+                                <%if(users2.racafavorita == ''){%>
+                                Nenhuma Raça
+                               <% }else{%>
+                                    <%=users2.racafavorita%>
+                                <%}%>
+                            </td>
+                            <td class="padd">
+                                <% if(users2.adm == true){ %>
+                                    <a href="/users/revogar/<%=users2.id%>" onclick="return confirm('Deseja mesmo remover o adm de <%=users2.nome%>?')">Tirar Adm</a>
+                                    <%}else if(users2.adm == false){%>
+                                        <a href="/users/conceder/<%=users2.id%>" onclick="return confirm('Deseja mesmo dar adm para <%=users2.nome%>?')">Dar Adm</a>
                                         <%}%>
                             </td>
                         </tr>

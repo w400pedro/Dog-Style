@@ -9,9 +9,13 @@
     <form action="/dogs" method="POST">
         <label for="nome" class="createlabel"><h5>Digite a Raça : </h5></label><input required class="createinput" name="raca">
         <br>
-        <label for="porte" class="createlabel" ><h5>Digite o Porte : </h5></label><input required class="createinput" required  name="porte">
+        <label for="porte" class="createlabel" ><h5>Digite o Porte : </h5></label><select name="porte" class="porte">
+            <option value="Pequeno">Pequeno</option>
+            <option value="Médio">Médio</option>
+            <option value="Grande">Grande</option>
+            <option value="Variado">Variado</option>
+        </select>
         <br>
-
         <label for="short_description" class="createlabel" ><h5>Digite a Descrição Curta: </h5></label><input required class="createinput2" required name="descricaocurta">
         <br>
         <br>

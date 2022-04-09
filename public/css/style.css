@@ -129,7 +129,11 @@ input {
     width: 800px !important;
     font-size: larger !important;
 }
-
+.porte{  
+    display: initial;
+    width: 200px;
+    border: 2px black solid;
+}
 #createinput3 {
     font-size: x-large;
     width: 800px;

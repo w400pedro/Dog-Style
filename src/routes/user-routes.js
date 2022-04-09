@@ -18,6 +18,10 @@ router2.get('/logout', funcaouser.userLogout);
 
 router2.get('/alluser', funcaouser.showUsers);
 
+//router2.get('/conceder/:id', funcaouser.giveAdm); DESCOMENTA AI PAPI
+
+//router2.get('/revogar/:id', funcaouser.removeAdm);
+
 router2.post('/cadastrar', funcaouser.userRegistration);
 
 router2.post('/login', funcaouser.userLogin);

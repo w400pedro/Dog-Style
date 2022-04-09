@@ -114,9 +114,13 @@ class userFunction {
         const userLogado = req.session.user;
         if (userLogado) {
             let c = 0;
-            userLogado.nome = req.body.nome
-            userLogado.foto = req.body.foto
-            users.foto = userLogado.foto
+            userLogado.nome = req.body.nome;
+            userLogado.foto = req.body.foto;
+            const findeduser = users.find(value => value.id == userLogado.id);
+            findeduser.nome = userLogado.nome;
+            findeduser.foto = userLogado.foto;
+            console.log('Perfil atualizado')
+
         res.redirect('/user')
         } else {
             return res.send('Você não está logado com uma conta <br> <a href="/login.html">Login</a>')
@@ -127,7 +131,7 @@ class userFunction {
     async showUsers(req, res) {
         const userLogado = req.session.user;
         if (userLogado && userLogado.adm == true) {
-            res.render('admin-all-users', { users: users, adm: userLogado })
+            res.render('admin-all-users', { user: users, users: userLogado })
         }else{
             res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
         }

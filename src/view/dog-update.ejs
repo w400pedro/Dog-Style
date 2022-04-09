@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('includes/head') %>
+<%- include('includes/head') %>
 
     <body>
         <%-include('includes/nav.ejs')%>
 
-    <h3 id="updateh3">Atualize o <%=dogs.raca%></h3>
-    <form action="/dogs/update/<%=dogs.id%>" method="POST">
-        <label for="nome"><h5>Atualize a Raça : </h5></label><input class="updateinput"  name="raca" value="<%=dogs.raca%>">
-        <br>
-        <label for="porte"><h5>atualize o Porte : </h5></label><input class="updateinput" name="porte" value="<%=dogs.porte%>">
-        <br>
-        <label for="short_description"><h5>Atualize a Descrição Curta: </h5></label><input id="updateinput2"  name="descricaocurta" value="<%=dogs.descricaocurta%>">
-        <br>
-        <br>
-        <label for="description"><h5>Atualize a Descrição : </h5></label> <textarea id="updatetextarea" name="descricao"><%=dogs.descricao%></textarea>
-        <br>
-        <br>
-        <img id="updateimg" src="<%=dogs.foto%>" width="250px"><br><label for="image"><h5>Atualize a imagem : </h5></label><input id="updateinputimg" name="foto" value="<%=dogs.foto%>">
-        <br>
-        <br>
+            <h3 id="updateh3">Atualize o <%=dogs.raca%>
+            </h3>
+            <form action="/dogs/update/<%=dogs.id%>" method="POST">
+                <label for="nome">
+                    <h5>Atualize a Raça : </h5>
+                </label><input class="updateinput" name="raca" value="<%=dogs.raca%>">
+                <br>
+                <label for="porte">
+                    <h5>atualize o Porte : </h5>
+                </label><select name="porte" class="porte">
+                    <%if(dogs.porte=='Pequeno' ){%>
+                        <option value="Pequeno" selected>Pequeno</option>
+                        <%}else{%>
+                            <option value="Pequeno">Pequeno</option>
+                            <%}%>
+                                <%if(dogs.porte=='Médio' ){%>
+                                    <option value="Médio" selected>Médio</option>
+                                    <%}else{%>
+                                        <option value="Médio">Médio</option>
+                                        <%}%>
+                                            <%if(dogs.porte=='Grande' ){%>
+                                                <option value="Grande" selected>Grande</option>
+                                                <%}else{%>
+                                                    <option value="Grande">Grande</option>
+                                                    <%}%>
+                                                        <%if(dogs.porte=='Variado' ){%>
+                                                            <option value="Variado" selected>Variado</option>
+                                                            <%}else{%>
+                                                                <option value="Variado">Variado</option>
+                                                                <%}%>
+                </select>
+                <br>
+                <label for="short_description">
+                    <h5>Atualize a Descrição Curta: </h5>
+                </label><input id="updateinput2" name="descricaocurta" value="<%=dogs.descricaocurta%>">
+                <br>
+                <br>
+                <label for="description">
+                    <h5>Atualize a Descrição : </h5>
+                </label> <textarea id="updatetextarea" name="descricao"><%=dogs.descricao%></textarea>
+                <br>
+                <br>
+                <img id="updateimg" src="<%=dogs.foto%>" width="250px"><br><label for="image">
+                    <h5>Atualize a imagem : </h5>
+                </label><input id="updateinputimg" name="foto" value="<%=dogs.foto%>">
+                <br>
+                <br>
 
-        <input class="waves-effect waves-light btn" id="updatesubmit" type="submit" value="Atualizar <%=dogs.raca%>">
-    </form>
-    <br>
-</body>
+                <input class="waves-effect waves-light btn" id="updatesubmit" type="submit"
+                    value="Atualizar <%=dogs.raca%>">
+            </form>
+            <br>
+            <script>
+                function teste() { }
+            </script>
+    </body>
+
 </html>
