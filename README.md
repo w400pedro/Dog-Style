@@ -5,7 +5,7 @@ Admin tem uma página unica aonde pode monitorar a lista de cachorros e suas inf
 
 ## Passo a passo para ver o projeto
 1. ### Clone o repositório
-2. ### Instale as dependências no terminal da pasta
+2. ### Instale as dependências
             npm install
 3. ### Execute o script
             npm run dev

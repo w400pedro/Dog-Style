@@ -1,60 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('includes/head') %>
+<%- include('includes/head') %>
 
     <body>
-        <%-include('includes/nav.ejs')%>
-        <h3 style="text-shadow: 5px 5px 7px #EE6E73; margin-left: 95px; margin-top: 20px;">Explore e conheça as mais diversas raças de cachorros</h3>  
-        <br>    
-        <form method="GET" style=" margin-left: 35%;"> <label for="search"><h5 style="display: inline; color: rgb(228, 188, 188);">Filtro : </h5></label>
-        <input name="filter" style="width: auto;" type="text"> <input type="submit" class="waves-effect waves-light btn" style="background-color: rgb(224, 167, 167);" value="&#128269;"></form>
-        <br>
-        
-        <table style="width: 92%; margin: 0 auto; border: 2px #EE6E73 dotted; background-color: antiquewhite;">
-            <tr>
-            <th>
-                Raça    
-            </th>
-            <th>
-                Porte
-            </th>
-            <th>
-                Descrição
-            </th>
-            <th>Saiba mais</th>
-            <% if(users.adm == true){ %>
-            <th><a href="dogs/create">Create &#9998;</a></th>
-            <%}%>
-            </tr>
-            <% dogs.forEach(dog => { %>
-            <tr>
-                <td>
-                    <%=dog.raca %>
-               
-                </td>
-                <td>
-                    <%=dog.porte %>
-                </td>
-                <td><%=dog.descricaocurta %></td>
-                <td>
-                    <a href="/dogs/details/<%=dog.id%>">Detalhes</a>
-                </td>
-               <% if(users.adm == true){%>
-                <td><a href="/dogs/update/<%=dog.id%>">Update</a></td>
-                <td><a href="/dogs/delete/<%=dog.id%>" onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")' >Delete</<a></td> <!--EJS as vezes sublinha o "return" pois não reconhece ele, mas funciona do jeito correto-->
-                <%}%>    
-                   <% if(users.racafavorita == dog.raca && users.adm == false){ %>
+        <%-include('includes /nav.ejs')%>
+            <h3 id="main-text">Explore e conheça as mais diversas raças de cachorros</h3>
+            <br>
+            <div id="filter">
+                <form method="GET"> <label for="search">
+                        <h5 id="filterword">Filtro : </h5>
+                    </label>
+                    <input name="filter" id="inputfilter" type="text"> <input type="submit"
+                        class="waves-effect waves-light btn" id="filtersubmit" value="&#128269;">
+                </form>
+            </div>
+            <br>
 
-                        <td><a href="/user/unfavorite/<%=dog.id%>"><h6>★</h6></a></td>
+            <table id="main-table">
+                <tr>
+                    <th class="padd">
+                        Raça
+                    </th>
+                    <th class="padd">
+                        Porte
+                    </th>
+                    <th class="padd">
+                        Descrição
+                    </th>
+                    <th class="padd">Saiba mais</th>
+                    <% if(users.adm==true){ %>
+                        <th class="padd"><a href="/dogs/create">Create &#9998;</a></th>
+                        <%}%>
+                </tr>
+                <% dogs.forEach(dog=> { %>
+                    <tr>
+                        <td class="padd">
+                            <%=dog.raca %>
 
-                        <% }else if(users.racafavorita != dog.raca && users.adm ==false){ %>
+                        </td>
+                        <td class="padd">
+                            <%=dog.porte %>
+                        </td>
+                        <td class="padd">
+                            <%=dog.descricaocurta %>
+                        </td>
+                        <td class="padd">
+                            <a href="/dogs/details/<%=dog.id%>">Detalhes</a>
+                        </td>
+                        <% if(users.adm==true){%>
+                            <td class="padd"><a href="/dogs/update/<%=dog.id%>">Update</a></td>
+                            <td class="padd"><a href="/dogs/delete/<%=dog.id%>"
+                                    onclick='return confirm("Deseja mesmo excluir <%=dog.raca%>?")'>Delete</<a>
+                            </td>
+                            <!--EJS as vezes sublinha o "return" pois não reconhece ele, mas funciona do jeito correto-->
+                            <%}%>
+                                <% if(users.racafavorita==dog.raca && users.adm==false){ %>
 
-                <td><a href="/user/favorite/<%=dog.id%>"><h6>&#10025;</h6></a></td> 
+                                    <td><a href="/user/unfavorite/<%=dog.id%>">
+                                            <h6>★</h6>
+                                        </a></td>
 
-            <% }%>
-            </tr>
-            <%})%>
-        </table>
-    </div>
+                                    <% }else if(users.racafavorita !=dog.raca && users.adm==false){ %>
+
+                                        <td><a href="/user/favorite/<%=dog.id%>">
+                                                <h6>&#10025;</h6>
+                                            </a></td>
+
+                                        <% }%>
+                    </tr>
+                    <%})%>
+            </table>
+            </div>
     </body>
+
 </html>

@@ -5,12 +5,41 @@ h5 {
 
 label {
     color: gray;
+    margin-left: 15px;
 }
+
+h3 {
+    margin-left: 15px;
+}
+
+input {
+    margin-left: 15px;
+}
+
 /*NAVBAR*/
-#LOGO{
-    color: yellow; 
+#LOGO {
+    color: yellow;
     text-shadow: 3px 3px 10px green;
+    text-decoration: none;
 }
+
+#edit:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.adecoration {
+    padding-left: 40px;
+}
+.padd{
+    text-align: center;
+}
+
+.adecoration:hover {
+    color: white;
+    text-decoration: none;
+}
+
 /*register.html*/
 #registerdata {
     width: 250px;
@@ -22,17 +51,67 @@ label {
     font-size: larger
 }
 
-#registersubtitle {
-    color: rgb(248, 153, 169);
+.subtitle {
+    color: gray;
+    text-align: center;
 }
 
-.registerinput {
+.title {
+    color: rgb(243, 128, 147);
+    text-align: center;
+}
+
+.a {
+    margin-left: 15px;
+}
+
+.registerandlogininput {
     width: 500px !important;
     font-size: larger !important;
 }
 
 #registersubmit {
     background-color: rgb(208, 109, 125);
+}
+
+/*login.html*/
+.loginlabel {
+    color: gray;
+    margin-left: 15px;
+}
+
+#loginsubmit {
+    background-color: rgb(208, 109, 125);
+}
+
+/*dog-list.ejs*/
+#main-text {
+    text-shadow: 5px 5px 7px #EE6E73;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#filter {
+    text-align: center;
+}
+
+#filterword {
+    color: #f3797d;
+}
+
+#filtersubmit {
+    background-color: rgb(224, 167, 167);
+}
+
+#inputfilter {
+    width: auto;
+}
+
+#main-table {
+    width: 92%;
+    margin: 0 auto;
+    border: 2px #EE6E73 dotted;
+    background-color: antiquewhite;
 }
 
 /*dog-create.ejs*/
@@ -74,49 +153,93 @@ label {
     width: initial !important;
     font-size: larger !important;
 }
-#updateinput2{
-width: 800px; 
-font-size: larger;
+
+#updateinput2 {
+    width: 800px;
+    font-size: larger;
 }
-#updatetextarea{
-font-size: x-large; 
-width: 800px; 
-height: 120px;
+
+#updatetextarea {
+    font-size: x-large;
+    width: 800px;
+    height: 120px;
 }
-#updateinputimg{
-width: 800px; 
-font-size: larger;
-position: absolute;
+
+#updateinputimg {
+    width: 800px;
+    font-size: larger;
+    position: absolute;
 }
-#updateimg{
+
+#updateimg {
     margin-left: 100px;
 }
+
 /*dog-details.ejs*/
-.dogdetailh{
+.dogdetailh {
     color: rgba(128, 122, 123, 0.767);
+    margin-left: 15px;
 }
-#dogdetailh2{
+
+#dogdetailh2 {
     color: rgb(248, 153, 169);
+    margin-left: 15px;
 }
-#dogimage{
+
+#dogimage {
     margin-left: 65%;
-     margin-top: 65px;
-      position: absolute;
+    margin-top: 65px;
+    position: absolute;
 }
-#detailsdiv{
+
+#detailsdiv {
     width: 800px;
 }
+
 /*user-profile.ejs*/
-#espacamento{
+#espacamento {
     margin-top: 20px !important;
     margin-left: -110px !important;
     position: absolute;
 }
-#espacamento2{
-    margin-top: 30px;
-}
-#espacamento3{
-    margin-top: 70px;
+
+#espacamento2 {
+    margin-top: 13px;
+    text-decoration: overline dotted 2px;
+    margin-left: 157px;
+    position: absolute;
 }
 
+#espacamento3 {
+    margin-top: 25px;
+}
 
+.profileabout {
+    color: rgb(109, 109, 109);
+    font-size: medium;
+}
+
+#edit {
+    background-color: rgb(208, 109, 125);
+    position: absolute;
+    margin-left: 1000px;
+    margin-top: 20px;
+}
+
+/*user-edit-profile*/
+#updateinput2 {
+    width: 400px;
+    font-size: larger;
+}
+
+#perfilupdateimg {
+    margin-left: 50px;
+}
+
+#updateinputimg2 {
+    width: 800px;
+    margin-left: 10px;
+    margin-top: -5px;
+    font-size: larger;
+    position: absolute;
+}

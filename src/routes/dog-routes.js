@@ -13,6 +13,7 @@ router.get('/update/:id', funcaodog.showUpdateDog);
 router.get('/delete/:id', funcaodog.deleteDog);
 
 router.post('/', funcaodog.createDog);
+
 router.post('/update/:id', funcaodog.updateDog);
 
 module.exports = router;
