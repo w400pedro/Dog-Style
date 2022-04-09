@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('includes/head') %>
+
+    <body>
+        <%-include('includes/nav.ejs')%>
+
+    <h3 id="updateh4">Atualize Seu perfil</h3>
+    <form action="/user/updateprofile" method="POST">
+        <label for="nome"><h5>Atualize o nome : </h5></label><input id="updateinput2"  name="nome" value="<%=users.nome%>">
+        <br>
+        <br>
+        <% let foto =''; if(users.foto == ''){ foto = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Xdf9OyXn9BpWL30gb6cpyLnkiCCbSaH8wVB1007o9WpYBDgb6J1_afDQTdJuqwgE3xM&usqp=CAU' }else{ foto = users.foto} %>
+
+        <img id="perfilupdateimg" src="<%=foto%>" width="250px"><br><label for="image"><h5>Atualize a imagem : </h5></label><input id="updateinputimg2" name="foto" value="<%=users.foto%>">
+        <br>
+        <br>
+
+        <input class="waves-effect waves-light btn" id="updatesubmit" type="submit" value="Atualizar Perfil">
+    </form>
+</body>
+</html>

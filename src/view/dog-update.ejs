@@ -4,7 +4,7 @@
 
     <body>
         <%-include('includes/nav.ejs')%>
-<body>
+
     <h3 id="updateh3">Atualize o <%=dogs.raca%></h3>
     <form action="/dogs/update/<%=dogs.id%>" method="POST">
         <label for="nome"><h5>Atualize a Raça : </h5></label><input class="updateinput"  name="raca" value="<%=dogs.raca%>">
@@ -23,5 +23,6 @@
 
         <input class="waves-effect waves-light btn" id="updatesubmit" type="submit" value="Atualizar <%=dogs.raca%>">
     </form>
+    <br>
 </body>
 </html>

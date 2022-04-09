@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ bootstrap ---------->
 <%- include('includes/head') %>
+<body>
 <%-include('includes/nav.ejs')%>
 <div class="container emp-profile">
-            <form method="post">
+            <form method="post"> 
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
                             <% let foto =''; if(users.foto == ''){ foto = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Xdf9OyXn9BpWL30gb6cpyLnkiCCbSaH8wVB1007o9WpYBDgb6J1_afDQTdJuqwgE3xM&usqp=CAU' }else{ foto = users.foto} %>
 
                             <img alt="Foto de Perfil" id="espacamento" src="<%=foto%>" width="280px">
-    
                         </div>
+                        
+                            <a href="/user/update" class="waves-effect waves-light btn" id="edit">Editar Perfil</a>
+                            
+
                     </div>
                     <div  class="col-md-6">
-                        <div id="espacamento2"  class="profile-head">
-                                    <h5>
-                                        <%=users.nome%>
-                                    </h5>
+                        <div  class="profile-head">
+                            <div id="espacamento2">
+                                    <h4>
+                                        <b><%=users.nome%></b>
+                                    </h4>
+                                    </div>
                                     <br><br>
                                     <br><br>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -42,11 +45,12 @@
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                
                                 <% if(users.adm == true){ %>
                                         <div class="row">
                             
                                             <div class="col-md-6">
-                                                <label>Seu Id</label>
+                                                <label class="profileabout">Seu Id</label>
                                             </div>
                                              <div class="col-md-6">
                                                 <p><%=users.id%></p>
@@ -55,7 +59,7 @@
                                         <%}%>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Nome</label>
+                                                <label class="profileabout">Nome</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%=users.nome%></p>
@@ -63,7 +67,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Email</label>
+                                                <label class="profileabout">Email</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%=users.email%></p>
@@ -74,7 +78,7 @@
                                         
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Raça favorita</label>
+                                                <label class="profileabout">Raça favorita</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><%=raca%></p>
@@ -85,7 +89,7 @@
                                             <div class="row">
                                 
                                                 <div class="col-md-6">
-                                                    <label>Tipo de Conta</label>
+                                                    <label class="profileabout">Tipo de Conta</label>
                                                 </div>
                                                  <div class="col-md-6">
                                                     <p>Administrador</p>
@@ -95,14 +99,17 @@
                                             <div class="row">
                                 
                                                 <div class="col-md-6">
-                                                    <label>Data de Nascimento</label>
+                                                    <label class="profileabout">Data de Nascimento</label>
                                                 </div>
                                                  <div class="col-md-6">
                                                     <p><%=users.data_nascimento%></p>
                                                 </div>
+                                           
                                             </div>
                             </div>
                     </div>
                 </div>
             </form>           
         </div>
+    </body>
+    </html>

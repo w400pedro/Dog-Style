@@ -48,7 +48,6 @@ class dogFunction {
     async showUpdateDog(req, res) {
         const userLogado = req.session.user;
         if (userLogado && userLogado.adm == true) {
-            const user = req.session.user;
                 const { id } = req.params;
                 const dogfiltrado = dog.filter(value => value.id == id);
                 return res.render('dog-update', { dogs: dogfiltrado[0], users: userLogado })

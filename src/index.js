@@ -39,4 +39,4 @@ app.use('*', (req, res) => {
     `);
 })
 
-app.listen(3001, function () { console.log("Servidor iniciado na porta 3000") });
+app.listen(3000, function () { console.log("Servidor iniciado na porta 3000") });
