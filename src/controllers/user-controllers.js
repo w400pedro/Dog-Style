@@ -138,6 +138,48 @@ class userFunction {
     }
 
 
+    async giveAdm(req, res) {
+        const userLogado = req.session.user;
+        if (userLogado) {
+            const { id } = req.params;
+            const littleuser = users.find(item => item.id == id);
+            let c = 0;
+            while (c < users.length) {
+                if (users[c].id == id) {
+                    users[c].adm = true
+                    console.log('Admzado')
+                }
+                c++
+            }
+
+            res.redirect('/user/alluser')
+        } else {
+            return res.send('Você não está logado com uma conta <br> <a href="/login.html">Login</a>')
+        }
+    }
+
+    async removeAdm(req, res) {
+        const userLogado = req.session.user;
+        if (userLogado) {
+            const { id } = req.params;
+            const littleuser = users.find(item => item.id == id);
+            let c = 0;
+            while (c < users.length) {
+                if (users[c].id == id) {
+                    users[c].adm = false
+                    console.log('Adm Revogado')
+                }
+                c++
+            }
+
+            res.redirect('/user/alluser')
+        } else {
+            return res.send('Você não está logado com uma conta <br> <a href="/login.html">Login</a>')
+        }
+    }
+
+
+
 
 }
 

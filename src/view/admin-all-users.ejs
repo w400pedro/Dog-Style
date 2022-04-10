@@ -62,9 +62,9 @@
                             </td>
                             <td class="padd">
                                 <% if(users2.adm == true){ %>
-                                    <a href="/users/revogar/<%=users2.id%>" onclick="return confirm('Deseja mesmo remover o adm de <%=users2.nome%>?')">Tirar Adm</a>
+                                    <a href="/user/revogar/<%=users2.id%>" onclick="return confirm('Deseja mesmo remover o adm de <%=users2.nome%>?')">Tirar Adm</a>
                                     <%}else if(users2.adm == false){%>
-                                        <a href="/users/conceder/<%=users2.id%>" onclick="return confirm('Deseja mesmo dar adm para <%=users2.nome%>?')">Dar Adm</a>
+                                        <a href="/user/conceder/<%=users2.id%>" onclick="return confirm('Deseja mesmo dar adm para <%=users2.nome%>?')">Dar Adm</a>
                                         <%}%>
                             </td>
                         </tr>
