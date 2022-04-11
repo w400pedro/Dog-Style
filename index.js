@@ -39,5 +39,5 @@ app.use('*', (req, res) => {
     `);
 })
 
-const port = process.env.PORT; 
+const port = process.env.PORT || 8080;
 app.listen(port, () => console.log('Server iniciado na porta '+port));
