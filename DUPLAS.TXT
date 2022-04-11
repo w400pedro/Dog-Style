@@ -1,4 +1,0 @@
-Nome da dupla: Pedro Henrique e João Pedro
-Turma: 4C
-
-Link do trabalho no Heroku está nos comentários dessa tarefa
