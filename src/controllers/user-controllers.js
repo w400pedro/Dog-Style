@@ -202,7 +202,7 @@ class userFunction {
         });
         res.redirect('/user/alluser')
     }else{
-        res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
+        res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>");
     }
     }
 

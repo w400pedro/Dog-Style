@@ -52,7 +52,7 @@ class dogFunction {
                 const dogfiltrado = dog.filter(value => value.id == id);
                 return res.render('dog-update', { dogs: dogfiltrado[0], users: userLogado })
             } else {
-                return res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
+                return res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>");
             }
         }
 

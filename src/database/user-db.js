@@ -4,4 +4,4 @@ const users = [
     {id: 'C-BpeuaX', nome: 'Pepona', email: 'pepona@gmail.com', senha: 'ugauga', data_nascimento: '2010-10-02', racafavorita: '',  adm: false, foto: ''},
     {id: 'MvJAMVzL', nome: 'Alvares Silva', email: 'alvares@gmail.com', senha: 'uga123', data_nascimento: '2015-08-02', racafavorita: '',  adm: false, foto: 'https://cdn.acritica.net/upload/dn_arquivo/2021/07/douglas-queiroz-2.jpg'}
 ]
-module.exports = users; 
+module.exports= users; 

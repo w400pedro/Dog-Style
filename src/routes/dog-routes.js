@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { route } = require('express/lib/application');
-const router = Router();
+const router = Router() ;
 const { dogFunction } = require('../controllers/dog-controllers');
 
 

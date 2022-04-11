@@ -3,4 +3,4 @@ const dogs = [
     {id: 2, raca: 'Vira-lata', porte: 'Variado', descricaocurta: 'É a denominação dada aos cães ou gatos sem raça definida', descricao: 'Vira-lata ou rafeiro é a denominação dada aos cães ou gatos sem raça definida, SRD, sendo CRAND e GRAND, como são geralmente referenciados em textos veterinários.', foto: 'https://www.hypeness.com.br/1/2019/09/Vira-lata_Caramelo_horizontal.jpg'},
     {id: 3, raca: 'Pitbull', porte: 'Médio', descricaocurta: 'É uma raça de cães oriunda dos Estados Unidos.', descricao: 'É uma raça pura de cães de porte médio e atléticos, desenvolvida no século XIX, pertencente à categoria terrier, subdivisão terrier de tipo bull.', foto: 'https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3122175:1629046604/Pit-1.jpg?f=16x9&h=720&q=0.8&w=1280&$p$f$h$q$w=a0f7833'}
 ]
-module.exports = dogs; 
+module.exports= dogs; 
