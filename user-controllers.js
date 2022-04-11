@@ -1,8 +1,6 @@
 const users = require('../database/user-db');
 const dogs = require('../database/dogs-db');
-
 const { nanoid } = require('nanoid');
-const res = require('express/lib/response');
 
 class userFunction {
     async showProfile(req, res) {
