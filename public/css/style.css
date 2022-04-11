@@ -210,8 +210,9 @@ input {
 #espacamento2 {
     margin-top: 13px;
     text-decoration: overline dotted 2px;
-    margin-left: 157px;
+    margin-left: 10px;
     position: absolute;
+    width: 900px;
 }
 
 #espacamento3 {
@@ -246,4 +247,8 @@ input {
     margin-top: -5px;
     font-size: larger;
     position: absolute;
+}
+/*admin-all-users*/
+.filtros{
+    text-align: center;
 }

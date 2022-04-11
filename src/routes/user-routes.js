@@ -22,6 +22,10 @@ router2.get('/conceder/:id', funcaouser.giveAdm);
 
 router2.get('/revogar/:id', funcaouser.removeAdm);
 
+router2.get('/desc', funcaouser.userBirthDesc);
+
+router2.get('/asc', funcaouser.userBirthAsc);
+
 router2.post('/cadastrar', funcaouser.userRegistration);
 
 router2.post('/login', funcaouser.userLogin);

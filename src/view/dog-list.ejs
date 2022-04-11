@@ -6,14 +6,13 @@
         <%-include('includes/nav.ejs')%>
             <h3 id="main-text">Explore e conheça as mais diversas raças de cachorros</h3>
             <br>
-            <div id="filter">
-                <form method="GET"> <label for="search">
-                        <h5 id="filterword">Filtro : </h5>
-                    </label>
-                    <input name="filter" id="inputfilter" type="text"> <input type="submit"
-                        class="waves-effect waves-light btn" id="filtersubmit" value="&#128269;">
-                </form>
-            </div>
+            <div class="filtros">
+                <label for="search">
+                   <h5 id="filterword">Ordernar por Raça : </h5>
+               </label>
+             <a href="/dogs/asc"><input type="button" class="waves-effect waves-light btn" id="filtersubmit" value="⬆️"></a>
+             <a href="/dogs/desc"><input type="button" class="waves-effect waves-light btn" id="filtersubmit" value="⬇️"></a>
+           </div>
             <br>
 
             <table id="main-table">

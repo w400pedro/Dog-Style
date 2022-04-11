@@ -28,7 +28,7 @@ class dogFunction {
         if (userLogado && userLogado.adm == true) {
             res.render('dog-create', { users: userLogado });
         }else{
-            res.send('Você não tem acesso a essa página <br><a href="/dogs">Voltar</a>');
+            res.send('Você não tem permissão para essa URL <br><a href="/dogs">Voltar</a>');
         }
     }
     async createDog(req, res) {
@@ -94,6 +94,38 @@ class dogFunction {
         }else {
             return res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
         }
+    }
+
+    async dogBreedAsc(req, res) {
+        const userLogado = req.session.user;
+        if(userLogado){
+        dogs.sort(function (breed1, breed2) {
+            let breed3 = breed1.raca.toLowerCase();
+            let breed4 = breed2.raca.toLowerCase();
+            if(breed3 < breed4){
+                return -1;
+            }
+        });
+        res.redirect('/')
+    }else{
+        res.send('Você não está logado <br><a href="/login.html">Voltar</a>')
+    }
+    }
+
+    async dogBreedDesc(req, res) {
+        const userLogado = req.session.user;
+        if(userLogado){
+        dogs.sort(function (breed1, breed2) {
+            let breed3 = breed1.raca.toLowerCase();
+            let breed4 = breed2.raca.toLowerCase();
+            if(breed3 > breed4){
+                return -1;
+            }
+        });
+        res.redirect('/')
+    }else{
+        res.send('Você não está logado <br><a href="/login.html">Voltar</a>')
+    }
     }
         
     };

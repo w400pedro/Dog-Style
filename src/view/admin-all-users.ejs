@@ -7,6 +7,16 @@
             <% if(users.adm==true){ %>
                 <h3 id="main-text">Todos usuários cadastrados</h3>
                 <br>
+                <div class="filtros">
+                 <label for="search">
+                    <h5 id="filterword">Ordernar por Nascimento : </h5>
+                </label>
+              <a href="/user/asc"><input type="button" class="waves-effect waves-light btn" id="filtersubmit" value="⬆️"></a>
+              <a href="/user/desc"><input type="button" class="waves-effect waves-light btn" id="filtersubmit" value="⬇️"></a>
+            </div>
+              <br>
+                <br>
+
 
                 <table id="main-table">
                     <tr>
@@ -50,9 +60,12 @@
                             <td class="padd">
                                 <%=users2.email%>
                             </td>
-                            <td class="padd">
-                                <%=users2.data_nascimento%>
+                            <% let dataoficial = ''; dataoficial = users2.data_nascimento.substring(8, 10) +'/'+users2.data_nascimento.substring(5, 7) +'/'+users2.data_nascimento.substring(0,4)%>
+                            <div class="col-md-6">
+                                <td class="padd">
+                               <p><%=dataoficial%></p>
                             </td>
+                            </div>
                             <td class="padd">
                                 <%if(users2.racafavorita == ''){%>
                                 Nenhuma Raça

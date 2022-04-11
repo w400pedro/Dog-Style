@@ -178,7 +178,33 @@ class userFunction {
         }
     }
 
+    async userBirthAsc(req, res) {
+        const userLogado = req.session.user;
+        if(userLogado && userLogado.adm == true){
+        users.sort(function (birth1, birth2) {
+            let birth3 = new Date(birth1.data_nascimento);
+            let birth4 = new Date(birth2.data_nascimento);
+            return birth4 - birth3;
+        });
+        res.redirect('/user/alluser')
+    }else{
+        res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
+    }
+    }
 
+    async userBirthDesc(req, res) {
+        const userLogado = req.session.user;
+        if(userLogado && userLogado.adm == true){
+        users.sort(function (birth1, birth2) {
+            let birth3 = new Date(birth1.data_nascimento);
+            let birth4 = new Date(birth2.data_nascimento);
+            return birth3 - birth4;
+        });
+        res.redirect('/user/alluser')
+    }else{
+        res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
+    }
+    }
 
 
 }

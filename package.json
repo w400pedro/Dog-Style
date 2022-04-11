@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "cross-env": "^7.0.3",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
@@ -11,7 +12,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "cross-env PORT=3000 nodemon src/index.js"
   },
   "author": "w400pedro",
   "license": "ISC",
