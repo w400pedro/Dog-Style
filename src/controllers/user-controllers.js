@@ -137,7 +137,7 @@ class userFunction {
 
     async giveAdm(req, res) {
         const userLogado = req.session.user;
-        if (userLogado) {
+        if (userLogado && userLogado.adm == true) {
             const { id } = req.params;
             const littleuser = users.find(item => item.id == id);
             let c = 0;
@@ -151,13 +151,13 @@ class userFunction {
 
             res.redirect('/user/alluser')
         } else {
-            return res.send('Você não está logado com uma conta <br> <a href="/login.html">Login</a>')
+            res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
         }
     }
 
     async removeAdm(req, res) {
         const userLogado = req.session.user;
-        if (userLogado) {
+        if (userLogado && userLogado.adm == true) {
             const { id } = req.params;
             const littleuser = users.find(item => item.id == id);
             let c = 0;
@@ -171,7 +171,7 @@ class userFunction {
 
             res.redirect('/user/alluser')
         } else {
-            return res.send('Você não está logado com uma conta <br> <a href="/login.html">Login</a>')
+            res.send("Você não tem permissão para essa URL <br><a href='/dogs'>Voltar</a>")
         }
     }
 
