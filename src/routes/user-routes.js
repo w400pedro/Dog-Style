@@ -1,6 +1,4 @@
 const { Router } = require('express');
-const { route } = require('express/lib/application');
-const { append } = require('express/lib/response');
 const router2 = Router() ;
 const { userFunction } = require('../controllers/user-controllers');
 

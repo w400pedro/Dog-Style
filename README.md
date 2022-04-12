@@ -1,4 +1,4 @@
-# Dog-Style
+# DogStyle
 Primeiro projeto usando NodeJS. 
 Site com informações sobre cachorros, com sistema de login, cadastro e perfil.
 Admin tem uma página unica aonde pode monitorar a lista de cachorros e suas informações e monitorar cada usuario do site.
@@ -9,5 +9,5 @@ Admin tem uma página unica aonde pode monitorar a lista de cachorros e suas inf
             npm install
 3. ### Execute o script
             npm run dev
-4. ### Entre no servidor pelo navegador
+4. ### Entrar no servidor pelo navegador
             http://localhost:3000/
